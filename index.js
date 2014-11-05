@@ -436,6 +436,8 @@ exports.Adapter = function(settings) {
 				throw err;
 			}
 
+			if (settings.reconnectTimeout === false) return;
+
 			var reconnectingTimeout = setTimeout(function() {
 				connection = mysql.createConnection(connectionInstance.config);
 				handleDisconnect(connection);
