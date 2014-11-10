@@ -433,7 +433,7 @@ exports.Adapter = function(settings) {
 			}
 
 			if (err.code !== 'PROTOCOL_CONNECTION_LOST' && err.code !== 'ECONNREFUSED') {
-				throw err;
+				return;
 			}
 
 			if (settings.reconnectTimeout === false) return;
